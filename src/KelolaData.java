@@ -228,12 +228,50 @@ public class KelolaData extends javax.swing.JFrame {
     }//GEN-LAST:event_combo_jenisItemStateChanged
 
     private void combo_jenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_jenisActionPerformed
-        if (combo_jenis.getSelectedItem().equals("Komplit")) {
+        if (combo_jenis.getSelectedItem().equals("(R) Komplit")) {
             txt_harga.setText("6000");
-        } else if (combo_jenis.getSelectedItem().equals("Cuci kering")) {
+        } else if (combo_jenis.getSelectedItem().equals("(R) Cuci kering")) {
             txt_harga.setText("5000");
-        } else if (combo_jenis.getSelectedItem().equals("Setrika")) {
+        } else if (combo_jenis.getSelectedItem().equals("(R) Setrika")) {
             txt_harga.setText("5000");
+        } else if (combo_jenis.getSelectedItem().equals("(K) Komplit")) {
+            txt_harga.setText("7500");
+        } else if (combo_jenis.getSelectedItem().equals("(K) Cuci kering")) {
+            txt_harga.setText("7000");
+        } else if (combo_jenis.getSelectedItem().equals("(K) Setrika")) {
+            txt_harga.setText("7000");
+        } else if (combo_jenis.getSelectedItem().equals("(X) Komplit")) {
+            txt_harga.setText("10000");
+        } else if (combo_jenis.getSelectedItem().equals("(X) Cuci kering")) {
+            txt_harga.setText("9000");
+        } else if (combo_jenis.getSelectedItem().equals("(X) Setrika")) {
+            txt_harga.setText("9000");
+        } else if (combo_jenis.getSelectedItem().equals("(SX) Komplit")) {
+            txt_harga.setText("15000");
+        } else if (combo_jenis.getSelectedItem().equals("(SX) Cuci kering")) {
+            txt_harga.setText("14000");
+        } else if (combo_jenis.getSelectedItem().equals("(SX) Setrika")) {
+            txt_harga.setText("14000");
+        } else if (combo_jenis.getSelectedItem().equals("Selimut (S)")) {
+            txt_harga.setText("15000");
+        } else if (combo_jenis.getSelectedItem().equals("Selimut (M)")) {
+            txt_harga.setText("20000");
+        } else if (combo_jenis.getSelectedItem().equals("Selimut (L)")) {
+            txt_harga.setText("25000");
+        } else if (combo_jenis.getSelectedItem().equals("Bedcover (L)")) {
+            txt_harga.setText("30000");
+        } else if (combo_jenis.getSelectedItem().equals("Bedcover (S)")) {
+            txt_harga.setText("25000");
+        } else if (combo_jenis.getSelectedItem().equals("Sprei (S)")) {
+            txt_harga.setText("7500");
+        } else if (combo_jenis.getSelectedItem().equals("Sprei (M)")) {
+            txt_harga.setText("10000");
+        } else if (combo_jenis.getSelectedItem().equals("Sprei (L)")) {
+            txt_harga.setText("15000");
+        } else if (combo_jenis.getSelectedItem().equals("Sepatu")) {
+            txt_harga.setText("25000");
+        } else if (combo_jenis.getSelectedItem().equals("Helm")) {
+            txt_harga.setText("25000");
         } else {
             txt_harga.setText("0");
         }
