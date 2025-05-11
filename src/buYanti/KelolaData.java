@@ -20,6 +20,7 @@ public class KelolaData extends javax.swing.JFrame {
      */
     public KelolaData(DashboardAdmin dashboard) {
         initComponents();
+        setLocationRelativeTo(null);
         this.dashboard = dashboard;
         setTitle("Kelola Data - Laundry Bu Yanti");
     }

@@ -17,6 +17,7 @@ public class Admin extends javax.swing.JFrame {
      */
     public Admin() {
         initComponents();
+        setLocationRelativeTo(null);
         setTitle("Login Admin - Laundry Bu Yanti");
     }
 
