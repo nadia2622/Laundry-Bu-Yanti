@@ -2,6 +2,9 @@ package buYanti;
 
 
 import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -143,10 +146,6 @@ public class KelolaData extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(btn_dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(149, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -166,13 +165,17 @@ public class KelolaData extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(txt_alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7)
-                        .addComponent(txt_deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6)
+                        .addComponent(txt_deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(btn_dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,13 +220,18 @@ public class KelolaData extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_beratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_beratActionPerformed
-        if(txt_berat.getText().equals("")){
+        String input = txt_berat.getText();
+        if (!input.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Mohon masukkan angka", "Tidak menerima data tersebut", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (txt_berat.getText().equals("")) {
             txt_harga.setText("0");
-        } else{
-            int harga = Integer.parseInt(txt_harga.getText());
-            int berat = Integer.parseInt(txt_berat.getText());
-            Total_Harga = harga * berat;
-            txt_harga.setText(String.valueOf(Total_Harga));
+            } else {
+                int harga = Integer.parseInt(txt_harga.getText());
+                int berat = Integer.parseInt(txt_berat.getText());
+                int Total_Harga = harga * berat;
+                txt_harga.setText(String.valueOf(Total_Harga));
+            }
         }
     }//GEN-LAST:event_txt_beratActionPerformed
 
@@ -294,7 +302,7 @@ public class KelolaData extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_hargaActionPerformed
 
     private void txt_deadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_deadlineActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txt_deadlineActionPerformed
 
     private void txt_alamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_alamatActionPerformed
@@ -318,21 +326,27 @@ public class KelolaData extends javax.swing.JFrame {
         String alamat = txt_alamat.getText();
         String harga = txt_harga.getText();
         String deadline = txt_deadline.getText();
+        String berat = txt_berat.getText();
         
         Object[] rowData = { nama, layanan, alamat, harga, deadline };
-
         
-        if (editedRow >= 0){
-            dashboard.getTable().setValueAt(nama, editedRow, 0);
-            dashboard.getTable().setValueAt(layanan, editedRow, 1);
-            dashboard.getTable().setValueAt(alamat, editedRow, 2);
-            dashboard.getTable().setValueAt(harga, editedRow, 3);
-            dashboard.getTable().setValueAt(deadline, editedRow, 4);
+        if(!deadline.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            JOptionPane.showMessageDialog(null, "Format deadline harus dd/MM/yyyy", "Tidak menerima data tersebut", JOptionPane.ERROR_MESSAGE);
+        } else if(!berat.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Mohon masukkan angka pada kolom berat", "Tidak menerima data tersebut", JOptionPane.ERROR_MESSAGE);
         } else {
-            dashboard.tambahDataKeTabel(rowData);
+            if (editedRow >= 0){
+                dashboard.getTable().setValueAt(nama, editedRow, 0);
+                dashboard.getTable().setValueAt(layanan, editedRow, 1);
+                dashboard.getTable().setValueAt(alamat, editedRow, 2);
+                dashboard.getTable().setValueAt(harga, editedRow, 3);
+                dashboard.getTable().setValueAt(deadline, editedRow, 4);
+            } else {
+                dashboard.tambahDataKeTabel(rowData);
+                dashboard.setVisible(true);
+                dispose();
+            }
         }
-        dashboard.setVisible(true);
-        dispose();
     }//GEN-LAST:event_btn_dashboardActionPerformed
 
     /**

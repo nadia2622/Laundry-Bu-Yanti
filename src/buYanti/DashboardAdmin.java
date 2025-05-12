@@ -76,7 +76,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         tblLaundry.setRowHeight(40);
         jScrollPane1.setViewportView(tblLaundry);
 
-        btn_kelolaData.setText("Kelola Data");
+        btn_kelolaData.setText("Tambah Data");
         btn_kelolaData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_kelolaDataActionPerformed(evt);
