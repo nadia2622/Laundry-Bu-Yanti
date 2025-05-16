@@ -127,39 +127,17 @@ public class Daftar extends javax.swing.JFrame {
         return;
     }
 
-    File file = new File("data_user.txt");
-    boolean duplicate = false;
-
-    if (file.exists()) {
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line.startsWith("Username: " + username + ",")) {
-                    duplicate = true;
-                    break;
-                }
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Gagal membaca file.");
-            return;
-        }
-    }
-
-    if (duplicate) {
+    if (UserAuthenticator.userDatabase.containsKey(username)) {
         JOptionPane.showMessageDialog(this, "Username sudah digunakan.");
         return;
     }
 
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-        writer.write("Username: " + username + ", Password: " + password);
-        writer.newLine();
-        JOptionPane.showMessageDialog(this, "Pendaftaran berhasil!");
+    // Simpan ke database static
+    UserAuthenticator.userDatabase.put(username, password);
+    JOptionPane.showMessageDialog(this, "Pendaftaran berhasil!");
 
-        new Admin().setVisible(true);
-        this.dispose();
-    } catch (IOException ex) {
-        JOptionPane.showMessageDialog(this, "Terjadi kesalahan saat menyimpan.");
-    }
+    new Admin().setVisible(true);
+    this.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

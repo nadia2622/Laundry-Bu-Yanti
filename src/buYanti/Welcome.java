@@ -49,7 +49,7 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Sing Up");
+        jButton2.setText("Sign Up");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -83,8 +83,6 @@ public class Welcome extends javax.swing.JFrame {
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(123, 123, 123))
         );
-
-        jButton2.getAccessibleContext().setAccessibleName("Sing Up");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
