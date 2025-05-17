@@ -410,7 +410,6 @@ public class KelolaData extends javax.swing.JFrame {
                 dashboard.getTable().setValueAt(alamat, editedRow, 2);
                 dashboard.getTable().setValueAt(harga, editedRow, 3);
                 dashboard.getTable().setValueAt(deadline, editedRow, 4);
-                dashboard.setVisible(true);
                 dispose();
             } else {
                 dashboard.tambahDataKeTabel(rowData);
