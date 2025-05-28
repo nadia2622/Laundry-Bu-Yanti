@@ -10,6 +10,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
+import java.util.List;
+import java.util.ArrayList;
+
+
+
 
 /**
  *
@@ -57,6 +62,25 @@ public class TabelActionCellEditor extends AbstractCellEditor implements TableCe
                 model.removeRow(editingRow);
             }
         });
+        
+        action.cmdDone.addActionListener(e -> {
+        fireEditingStopped();
+
+        String nama = (String) dashboard.getTable().getValueAt(editingRow, 0);
+        String layanan = (String) dashboard.getTable().getValueAt(editingRow, 1);
+        String alamat = (String) dashboard.getTable().getValueAt(editingRow, 2);
+        String harga = (String) dashboard.getTable().getValueAt(editingRow, 3);
+        String deadline = (String) dashboard.getTable().getValueAt(editingRow, 4);
+
+        LaundryData data = new LaundryData(nama, layanan, alamat, harga, deadline);
+        DashboardAdmin.arsipData.add(data);
+        
+        DefaultTableModel model = (DefaultTableModel) dashboard.getTable().getModel();
+        model.removeRow(editingRow);
+
+        JOptionPane.showMessageDialog(null, "Data berhasil dipindahkan ke Arsip.");
+    });
+
 
         return action;
     }

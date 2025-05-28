@@ -34,6 +34,7 @@ public class PanelAction extends javax.swing.JPanel {
 
         cmdDelete = new buYanti.ActionButton();
         cmdEdit = new buYanti.ActionButton();
+        cmdDone = new buYanti.ActionButton();
 
         cmdDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buYanti/delete_20dp_1F1F1F_FILL0_wght400_GRAD0_opsz20.png"))); // NOI18N
         cmdDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -49,22 +50,32 @@ public class PanelAction extends javax.swing.JPanel {
             }
         });
 
+        cmdDone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buYanti/checklist.png"))); // NOI18N
+        cmdDone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdDoneActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(cmdDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cmdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmdDone, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cmdDone, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmdDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -80,9 +91,15 @@ public class PanelAction extends javax.swing.JPanel {
         cmdEdit.setText("Edit");
     }//GEN-LAST:event_cmdEditActionPerformed
 
+    private void cmdDoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDoneActionPerformed
+        cmdDone.setText("Done");
+        
+    }//GEN-LAST:event_cmdDoneActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public buYanti.ActionButton cmdDelete;
+    public buYanti.ActionButton cmdDone;
     public buYanti.ActionButton cmdEdit;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.event.CellEditorListener;
 import javax.swing.table.TableCellEditor;
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -21,6 +24,8 @@ import javax.swing.table.TableCellEditor;
  */
 public class DashboardAdmin extends javax.swing.JFrame {
     private DefaultTableModel tableModel;
+    public static List<LaundryData> arsipData = new ArrayList<>();
+
    
     /**
      * Creates new form DashboardAdmin
@@ -34,9 +39,15 @@ public class DashboardAdmin extends javax.swing.JFrame {
         setTitle("Dashboard Admin - Laundry Bu Yanti");
         tableModel = (DefaultTableModel) tblLaundry.getModel();
     }
+    
     public void tambahDataKeTabel(Object[] data) {
         tableModel.addRow(data);
     }
+    
+    public JTable getTable() {
+    return tblLaundry;
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +63,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLaundry = new javax.swing.JTable();
         btn_kelolaData = new javax.swing.JButton();
+        btn_lihatArsip = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,6 +104,16 @@ public class DashboardAdmin extends javax.swing.JFrame {
             }
         });
 
+        btn_lihatArsip.setBackground(new java.awt.Color(110, 193, 228));
+        btn_lihatArsip.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btn_lihatArsip.setForeground(new java.awt.Color(255, 255, 255));
+        btn_lihatArsip.setText("Lihat Arsip");
+        btn_lihatArsip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_lihatArsipActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,6 +127,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_lihatArsip, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_kelolaData, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))))
         );
@@ -114,7 +138,9 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(btn_kelolaData, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_kelolaData, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_lihatArsip, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -144,6 +170,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_kelolaDataActionPerformed
 
+    private void btn_lihatArsipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lihatArsipActionPerformed
+        new Arsip().setVisible(true); // menampilkan form arsip
+        this.dispose();
+    }//GEN-LAST:event_btn_lihatArsipActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -172,22 +203,17 @@ public class DashboardAdmin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DashboardAdmin().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new DashboardAdmin().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_kelolaData;
+    private javax.swing.JButton btn_lihatArsip;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblLaundry;
     // End of variables declaration//GEN-END:variables
-
-    public JTable getTable() {
-        return tblLaundry;
-    }
 }
