@@ -32,6 +32,7 @@ public class Arsip extends javax.swing.JFrame {
             data.getNama(),
             data.getLayanan(),
             data.getAlamat(),
+            data.getBerat(),
             data.getHarga(),
             data.getDeadline()
         };
