@@ -17,7 +17,7 @@ public class Welcome extends javax.swing.JFrame {
     public Welcome() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Welcome to laundry Bu Yanti");
+        setTitle("Welcome to Laundry Bu Yanti App");
     }
 
     /**

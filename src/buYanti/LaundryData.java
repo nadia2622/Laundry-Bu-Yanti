@@ -11,12 +11,12 @@ package buYanti;
 
 
 public class LaundryData {
-    private String nama;
-    private String layanan;
-    private String alamat;
-    private String berat;
-    private String harga;
-    private String deadline;
+    private final String nama;
+    private final String layanan;
+    private final String alamat;
+    private final String berat;
+    private final String harga;
+    private final String deadline;
 
     public LaundryData(String nama, String layanan, String alamat, String berat, String harga, String deadline) {
         this.nama = nama;

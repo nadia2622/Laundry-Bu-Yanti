@@ -19,7 +19,7 @@ public class Arsip extends javax.swing.JFrame {
         initComponents();
         this.dashboard = dashboard;
         setLocationRelativeTo(null);
-        setTitle("Arsip Pesanan - Laundry Bu Yanti");
+        setTitle("Laundry Order Archive - Laundry Bu Yanti");
         tblArsip.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRenderer());
         tblArsip.getColumnModel().getColumn(6).setCellEditor(new TableActionCellEditor(tblArsip));
 
@@ -69,7 +69,8 @@ public class Arsip extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(110, 193, 228));
-        jLabel1.setText("Arsip Pemesanan Laundry");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Laundry Order Archive");
 
         tblArsip.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         tblArsip.setForeground(new java.awt.Color(34, 34, 34));
@@ -114,7 +115,7 @@ public class Arsip extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 348, Short.MAX_VALUE)
                         .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))))
         );

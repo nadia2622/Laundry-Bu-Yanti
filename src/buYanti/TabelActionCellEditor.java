@@ -19,14 +19,15 @@ import javax.swing.table.TableCellEditor;
 public class TabelActionCellEditor extends AbstractCellEditor implements TableCellEditor{
     
     private PanelAction action;
-    private DashboardAdmin dashboard;
+    private final DashboardAdmin dashboard;
     private int editingRow;
     
     public TabelActionCellEditor(DashboardAdmin dashboard){
         this.dashboard = dashboard;
         
     }
-
+    
+    @Override
     public Component getTableCellEditorComponent(JTable table, Object value,
         boolean isSelected, int row, int column) {
         
@@ -82,7 +83,8 @@ public class TabelActionCellEditor extends AbstractCellEditor implements TableCe
 
         return action;
     }
-
+    
+    @Override
     public Object getCellEditorValue() {
         return null;
     }

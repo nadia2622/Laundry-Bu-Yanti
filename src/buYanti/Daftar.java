@@ -11,9 +11,9 @@ public class Daftar extends javax.swing.JFrame {
     public Daftar() {
     initComponents();
     setLocationRelativeTo(null); // opsional: agar muncul di tengah
-    setTitle("Form Daftar");
+    setTitle("Register as Admin - Laundry Bu Yanti");
     pack();
-    setVisible(true); // wajib kalau dipanggil dari luar main
+    setVisible(true); 
 }
 
 

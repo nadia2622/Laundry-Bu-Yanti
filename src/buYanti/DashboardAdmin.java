@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author LENOVO
  */
 public class DashboardAdmin extends javax.swing.JFrame {
-    private DefaultTableModel tableModel;
+    private final DefaultTableModel tableModel;
     public static List<LaundryData> arsipData = new ArrayList<>();
 
    
@@ -28,7 +28,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         tblLaundry.getColumnModel().getColumn(6).setCellEditor(new TabelActionCellEditor(this));
         
         setLocationRelativeTo(null); // Nengahin halamannya pas baru kebuka
-        setTitle("Dashboard Admin - Laundry Bu Yanti");
+        setTitle("Admin Dashboard - Laundry Bu Yanti");
         tableModel = (DefaultTableModel) tblLaundry.getModel();
     }
     
@@ -63,7 +63,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(110, 193, 228));
-        jLabel1.setText("Dashboard Admin");
+        jLabel1.setText("Admin Dashboard");
 
         tblLaundry.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         tblLaundry.setForeground(new java.awt.Color(34, 34, 34));
@@ -72,7 +72,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nama Client", "Jenis Layanan", "Alamat", "Berat", "Harga", "Deadline", "Action"
+                "Client Name", "Order Type", "Address", "Weight", "Price", "Deadline", "Action"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -99,7 +99,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         btn_lihatArsip.setBackground(new java.awt.Color(110, 193, 228));
         btn_lihatArsip.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         btn_lihatArsip.setForeground(new java.awt.Color(255, 255, 255));
-        btn_lihatArsip.setText("Lihat Arsip");
+        btn_lihatArsip.setText("View Archive");
         btn_lihatArsip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_lihatArsipActionPerformed(evt);

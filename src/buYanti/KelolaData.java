@@ -13,11 +13,12 @@ import javax.swing.JOptionPane;
  * @author LENOVO
  */
 public class KelolaData extends javax.swing.JFrame {
-    private DashboardAdmin dashboard;
+    private final DashboardAdmin dashboard;
     public int Total_Harga;
     private int editedRow = -1;
     /**
      * Creates new form KelolaData
+     * @param dashboard objek DashboardAdmin yang akan digunakan untuk akses atau update data.
      */
     public KelolaData(DashboardAdmin dashboard) {
         initComponents();
@@ -115,7 +116,7 @@ public class KelolaData extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Order Name");
+        jLabel2.setText("Client Name");
 
         txt_nama.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         txt_nama.setForeground(new java.awt.Color(34, 34, 34));
@@ -150,7 +151,7 @@ public class KelolaData extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Weight");
+        jLabel10.setText("Weight (kg) / pcs");
 
         txt_berat.setFont(new java.awt.Font("Microsoft YaHei", 0, 14)); // NOI18N
         txt_berat.setForeground(new java.awt.Color(34, 34, 34));
@@ -199,7 +200,7 @@ public class KelolaData extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Addres");
+        jLabel13.setText("Address");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buYanti/Logo.png"))); // NOI18N
 
