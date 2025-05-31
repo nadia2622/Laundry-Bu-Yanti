@@ -4,16 +4,8 @@ package buYanti;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-import buYanti.KelolaData;
 import javax.swing.table.DefaultTableModel;
-import buYanti.TableActionCellRender;
-import java.awt.Component;
-import java.util.EventObject;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.JPanel;
 import javax.swing.JTable;
-import javax.swing.event.CellEditorListener;
-import javax.swing.table.TableCellEditor;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -35,7 +27,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         tblLaundry.getColumnModel().getColumn(5).setCellRenderer(new TableActionCellRender());
         tblLaundry.getColumnModel().getColumn(5).setCellEditor(new TabelActionCellEditor(this));
         
-        setLocationRelativeTo(null); // Center window
+        setLocationRelativeTo(null); // Nengahin halamannya pas baru kebuka
         setTitle("Dashboard Admin - Laundry Bu Yanti");
         tableModel = (DefaultTableModel) tblLaundry.getModel();
     }

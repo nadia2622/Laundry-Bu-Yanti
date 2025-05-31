@@ -2,9 +2,6 @@ package buYanti;
 
 
 import javax.swing.JOptionPane;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,6 +14,7 @@ import java.text.ParseException;
  */
 public class KelolaData extends javax.swing.JFrame {
     private DashboardAdmin dashboard;
+    public int Total_Harga;
     private int editedRow = -1;
     /**
      * Creates new form KelolaData
@@ -28,7 +26,6 @@ public class KelolaData extends javax.swing.JFrame {
         setTitle("Kelola Data - Laundry Bu Yanti");
     }
     
-    public int Total_Harga;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -304,7 +301,7 @@ public class KelolaData extends javax.swing.JFrame {
                 int Total_Harga = harga * berat;
                 txt_harga.setText(String.valueOf(Total_Harga));
             }
-        }
+        } // intinya tuh ya, setelah milih combo box, ketika masukin angka ke kolom berat, total harga akan terkalkulasi secara otomatis
     }//GEN-LAST:event_txt_beratActionPerformed
 
     private void combo_jenisItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_combo_jenisItemStateChanged
@@ -312,7 +309,7 @@ public class KelolaData extends javax.swing.JFrame {
     }//GEN-LAST:event_combo_jenisItemStateChanged
 
     private void combo_jenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_jenisActionPerformed
-        if (combo_jenis.getSelectedItem().equals("(R) Komplit")) {
+        if (combo_jenis.getSelectedItem().equals("(R) Komplit")) { // konten combo box disesuaikan dengan harga
             txt_harga.setText("6000");
         } else if (combo_jenis.getSelectedItem().equals("(R) Cuci kering")) {
             txt_harga.setText("5000");

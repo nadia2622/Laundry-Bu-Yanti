@@ -1,9 +1,5 @@
 package buYanti;
 
-
-import buYanti.Admin;
-import buYanti.Daftar;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -163,14 +159,14 @@ public class Welcome extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Admin admin = new Admin();
-        admin.setVisible(true);
-        dispose();
+        admin.setVisible(true); //buka halaman Admin
+        dispose(); // tutup halaman Welcome
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Daftar daftarForm = new Daftar();
-        daftarForm.setVisible(true);
-        dispose();
+        daftarForm.setVisible(true); //buka halaman Daftar
+        dispose(); // tutup halaman Welcome
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

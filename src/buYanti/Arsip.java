@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package buYanti;
-import buYanti.LaundryData; 
 import javax.swing.table.DefaultTableModel;
 // atau sesuaikan dengan package milikmu
 
@@ -14,12 +13,11 @@ import javax.swing.table.DefaultTableModel;
 public class Arsip extends javax.swing.JFrame {
     private String nama;
     private String layanan;
-    private String alamat;
-    private double harga;
-    private String deadline;
     
     public Arsip() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Arsip Pesanan - Laundry Bu Yanti");
         tblArsip.getColumnModel().getColumn(5).setCellRenderer(new TableActionCellRenderer());
         tblArsip.getColumnModel().getColumn(5).setCellEditor(new TableActionCellEditor(tblArsip));
 

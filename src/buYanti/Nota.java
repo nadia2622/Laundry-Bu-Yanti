@@ -18,6 +18,8 @@ public class Nota extends javax.swing.JFrame {
     
     public Nota() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Arsip Pesanan - Laundry Bu Yanti");
     }
 
     public Nota(String nama, String tanggal, String alamat, List<Object[]> layanan) {

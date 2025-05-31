@@ -4,14 +4,7 @@ package buYanti;
  *
  * @author RYVANDA
  */
-import buYanti.Admin;
-import buYanti.Welcome;
 import javax.swing.JOptionPane;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
 
 public class Daftar extends javax.swing.JFrame {
    
@@ -19,7 +12,7 @@ public class Daftar extends javax.swing.JFrame {
     initComponents();
     setLocationRelativeTo(null); // opsional: agar muncul di tengah
     setTitle("Form Daftar");
-    pack(); // penting agar layout ditata otomatis
+    pack();
     setVisible(true); // wajib kalau dipanggil dari luar main
 }
 
@@ -222,7 +215,7 @@ public class Daftar extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   public static void main(String args[]) {
+   public static void main(String args[]) { // main ini buat nampilin halaman yang di dalamnya akan berjalan fungsi2 yang udah kita buat di atas.
     // ...
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
