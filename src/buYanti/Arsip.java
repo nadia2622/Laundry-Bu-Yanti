@@ -18,8 +18,8 @@ public class Arsip extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Arsip Pesanan - Laundry Bu Yanti");
-        tblArsip.getColumnModel().getColumn(5).setCellRenderer(new TableActionCellRenderer());
-        tblArsip.getColumnModel().getColumn(5).setCellEditor(new TableActionCellEditor(tblArsip));
+        tblArsip.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRenderer());
+        tblArsip.getColumnModel().getColumn(6).setCellEditor(new TableActionCellEditor(tblArsip));
 
         tampilkanDataArsip();
     }
@@ -75,11 +75,11 @@ public class Arsip extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nama Client", "Jenis Layanan", "Alamat", "Harga", "Deadline", "Action"
+                "Nama Client", "Jenis Layanan", "Alamat", "Berat", "Harga", "Deadline", "Action"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

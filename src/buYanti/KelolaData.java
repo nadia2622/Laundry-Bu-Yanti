@@ -393,11 +393,11 @@ public class KelolaData extends javax.swing.JFrame {
         String nama = txt_nama.getText();
         String layanan = combo_jenis.getSelectedItem().toString();
         String alamat = txt_alamat.getText();
+        String berat = txt_berat.getText();
         String harga = txt_harga.getText();
         String deadline = txt_deadline.getText();
-        String berat = txt_berat.getText();
         
-        Object[] rowData = { nama, layanan, alamat, harga, deadline };
+        Object[] rowData = { nama, layanan, alamat, berat, harga, deadline };
         
         if(!deadline.matches("\\d{2}/\\d{2}/\\d{4}")) {
             JOptionPane.showMessageDialog(null, "Format deadline harus dd/MM/yyyy", "Tidak menerima data tersebut", JOptionPane.ERROR_MESSAGE);
@@ -408,8 +408,9 @@ public class KelolaData extends javax.swing.JFrame {
                 dashboard.getTable().setValueAt(nama, editedRow, 0);
                 dashboard.getTable().setValueAt(layanan, editedRow, 1);
                 dashboard.getTable().setValueAt(alamat, editedRow, 2);
-                dashboard.getTable().setValueAt(harga, editedRow, 3);
-                dashboard.getTable().setValueAt(deadline, editedRow, 4);
+                dashboard.getTable().setValueAt(berat, editedRow, 3);
+                dashboard.getTable().setValueAt(harga, editedRow, 4);
+                dashboard.getTable().setValueAt(deadline, editedRow, 5);
                 dashboard.setVisible(true);
                 dispose();
             } else {
@@ -480,10 +481,11 @@ public class KelolaData extends javax.swing.JFrame {
     private javax.swing.JTextField txt_nama;
     // End of variables declaration//GEN-END:variables
 
-    public void setData(String nama, String layanan, String alamat, String harga, String deadline, int row) {
+    public void setData(String nama, String layanan, String alamat, String berat, String harga, String deadline, int row) {
         txt_nama.setText(nama);
         combo_jenis.setSelectedItem(layanan);
         txt_alamat.setText(alamat);
+        txt_berat.setText(berat);
         txt_harga.setText(harga);
         txt_deadline.setText(deadline);
         this.editedRow = row;

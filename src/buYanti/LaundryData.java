@@ -14,13 +14,15 @@ public class LaundryData {
     private String nama;
     private String layanan;
     private String alamat;
+    private String berat;
     private String harga;
     private String deadline;
 
-    public LaundryData(String nama, String layanan, String alamat, String harga, String deadline) {
+    public LaundryData(String nama, String layanan, String alamat, String berat, String harga, String deadline) {
         this.nama = nama;
         this.layanan = layanan;
         this.alamat = alamat;
+        this.alamat = berat;
         this.harga = harga;
         this.deadline = deadline;
     }
@@ -29,6 +31,7 @@ public class LaundryData {
     public String getNama() { return nama; }
     public String getLayanan() { return layanan; }
     public String getAlamat() { return alamat; }
+    public String getBerat() { return berat; }
     public String getHarga() { return harga; }
     public String getDeadline() { return deadline; }
 }

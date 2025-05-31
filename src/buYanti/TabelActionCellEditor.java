@@ -39,11 +39,12 @@ public class TabelActionCellEditor extends AbstractCellEditor implements TableCe
             String nama = (String) dashboard.getTable().getValueAt(editingRow, 0);
             String layanan = (String) dashboard.getTable().getValueAt(editingRow, 1);
             String alamat = (String) dashboard.getTable().getValueAt(editingRow, 2);
-            String harga = (String) dashboard.getTable().getValueAt(editingRow, 3);
-            String deadline = (String) dashboard.getTable().getValueAt(editingRow, 4);
+            String berat = (String) dashboard.getTable().getValueAt(editingRow, 3);
+            String harga = (String) dashboard.getTable().getValueAt(editingRow, 4);
+            String deadline = (String) dashboard.getTable().getValueAt(editingRow, 5);
             
             KelolaData kelolaData = new KelolaData(dashboard);
-            kelolaData.setData(nama, layanan, alamat, harga, deadline, editingRow);
+            kelolaData.setData(nama, layanan, alamat, berat, harga, deadline, editingRow);
             kelolaData.setVisible(true);
             dashboard.setVisible(false);
             
@@ -65,10 +66,11 @@ public class TabelActionCellEditor extends AbstractCellEditor implements TableCe
         String nama = (String) dashboard.getTable().getValueAt(editingRow, 0);
         String layanan = (String) dashboard.getTable().getValueAt(editingRow, 1);
         String alamat = (String) dashboard.getTable().getValueAt(editingRow, 2);
-        String harga = (String) dashboard.getTable().getValueAt(editingRow, 3);
-        String deadline = (String) dashboard.getTable().getValueAt(editingRow, 4);
+        String berat = (String) dashboard.getTable().getValueAt(editingRow, 3);
+        String harga = (String) dashboard.getTable().getValueAt(editingRow, 4);
+        String deadline = (String) dashboard.getTable().getValueAt(editingRow, 5);
 
-        LaundryData data = new LaundryData(nama, layanan, alamat, harga, deadline);
+        LaundryData data = new LaundryData(nama, layanan, alamat, berat, harga, deadline);
         DashboardAdmin.arsipData.add(data);
         
         DefaultTableModel model = (DefaultTableModel) dashboard.getTable().getModel();

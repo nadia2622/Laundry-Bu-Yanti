@@ -24,8 +24,8 @@ public class DashboardAdmin extends javax.swing.JFrame {
      */
     public DashboardAdmin() {
         initComponents();
-        tblLaundry.getColumnModel().getColumn(5).setCellRenderer(new TableActionCellRender());
-        tblLaundry.getColumnModel().getColumn(5).setCellEditor(new TabelActionCellEditor(this));
+        tblLaundry.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRender());
+        tblLaundry.getColumnModel().getColumn(6).setCellEditor(new TabelActionCellEditor(this));
         
         setLocationRelativeTo(null); // Nengahin halamannya pas baru kebuka
         setTitle("Dashboard Admin - Laundry Bu Yanti");
@@ -72,11 +72,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nama Client", "Jenis Layanan", "Alamat", "Harga", "Deadline", "Action"
+                "Nama Client", "Jenis Layanan", "Alamat", "Berat", "Harga", "Deadline", "Action"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
