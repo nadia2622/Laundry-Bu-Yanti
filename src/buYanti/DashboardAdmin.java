@@ -163,7 +163,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_kelolaDataActionPerformed
 
     private void btn_lihatArsipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lihatArsipActionPerformed
-        new Arsip().setVisible(true); // menampilkan form arsip
+        new Arsip(this).setVisible(true); // menampilkan form arsip
         this.dispose();
     }//GEN-LAST:event_btn_lihatArsipActionPerformed
 

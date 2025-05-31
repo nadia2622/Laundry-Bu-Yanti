@@ -13,9 +13,11 @@ import javax.swing.table.DefaultTableModel;
 public class Arsip extends javax.swing.JFrame {
     private String nama;
     private String layanan;
+    private DashboardAdmin dashboard;
     
-    public Arsip() {
+    public Arsip(DashboardAdmin dashboard) {
         initComponents();
+        this.dashboard = dashboard;
         setLocationRelativeTo(null);
         setTitle("Arsip Pesanan - Laundry Bu Yanti");
         tblArsip.getColumnModel().getColumn(6).setCellRenderer(new TableActionCellRenderer());
@@ -132,7 +134,7 @@ public class Arsip extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
-        new DashboardAdmin().setVisible(true); // menampilkan form dashboard admin, mbok mau nambahin data lagi
+        dashboard.setVisible(true); // menampilkan form dashboard admin, mbok mau nambahin data lagi
         this.dispose();
     }//GEN-LAST:event_btn_backActionPerformed
 
@@ -165,7 +167,8 @@ public class Arsip extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Arsip().setVisible(true);
+            DashboardAdmin dummyDashboard = new DashboardAdmin(); // dummy kosong
+            new Arsip(dummyDashboard).setVisible(true);
         });
     }
 

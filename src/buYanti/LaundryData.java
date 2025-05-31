@@ -22,7 +22,7 @@ public class LaundryData {
         this.nama = nama;
         this.layanan = layanan;
         this.alamat = alamat;
-        this.alamat = berat;
+        this.berat = berat;
         this.harga = harga;
         this.deadline = deadline;
     }
