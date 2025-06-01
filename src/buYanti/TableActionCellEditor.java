@@ -11,6 +11,8 @@ package buYanti;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -27,12 +29,21 @@ public class TableActionCellEditor extends AbstractCellEditor implements TableCe
             public void actionPerformed(ActionEvent e) {
                 fireEditingStopped(); // Stop editing
                 // 🔽 Aksi ketika tombol ditekan
-                // Ambil data dari baris yang sesuai, misalnya:
-                String nama = table.getValueAt(row, 0).toString();
-                System.out.println("Lihat nota untuk: " + nama);
+                // Ambil data dari DashboardAdmin.arsipData berdasarkan baris
+        LaundryData data = DashboardAdmin.arsipData.get(row);
 
-                // Contoh: buka jendela Nota.java
-                new Nota().setVisible(true);
+        // Siapkan data layanan sesuai format konstruktor Nota
+        List<Object[]> layanan = new ArrayList<>();
+        layanan.add(new Object[]{data.getLayanan(), data.getBerat(), data.getHarga()});
+
+        // Buka jendela Nota dengan data lengkap
+        Nota nota = new Nota(
+            data.getNama(),
+            data.getDeadline(),
+            data.getAlamat(),
+            layanan
+        );
+        nota.setVisible(true);
             }
         });
     }
